@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conversor de Temperatura</title>
+	<script>
+		function converter() {
+   // Obter a temperatura digitada
+   var temp = document.getElementById("temp").value;
+ 
+   // Obter a escala selecionada
+   var escala = document.querySelector('input[name="escala"]:checked').value;
+ 
+   // Converter para Fahrenheit ou Celsius
+   if (escala === "fahrenheit") {
+     var resultado = (temp * 9/5) + 32;
+     resultado += "°F";
+   }
+   else {
+     var resultado = (temp - 32) * 5/9;
+     resultado += "°C";
+   }
+  
+   // Exibir o resultado na página
+   document.getElementById("resultado").innerHTML = resultado;
+ }
+	</script>
+</head>
+<body>
+	<h1>Conversor de Temperatura</h1>
+	<form>
+		<label for="temp">Temperatura:</label>
+		<input type="number" id="temp" name="temp"><br><br>
+		<label for="fahrenheit">Fahrenheit</label>
+		<input type="radio" id="fahrenheit" name="escala" value="fahrenheit">
+		<label for="celsius">Celsius</label>
+		<input type="radio" id="celsius" name="escala" value="celsius"><br><br>
+		<button type="button" onclick="converter()">Converter</button>
+	</form>
+	<p id="resultado"></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcularCusto() {
+        const comprimento = document.getElementById("comprimento").value;
+        const largura = document.getElementById("largura").value;
+
+        const area = comprimento * largura;
+        const custo = area * 36;
+
+        alert(`O custo de assentar piso no cômodo é de R$ ${custo.toFixed(2)}`);
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+    <label for="comprimento">Comprimento do cômodo (em metros):</label>
+    <input type="number" id="comprimento" name="comprimento"><br>
+
+    <label for="largura">Largura do cômodo (em metros):</label>
+    <input type="number" id="largura" name="largura"><br>
+
+    <button type="button" onclick="calcularCusto()">Calcular custo</button>
+    </form>
+</body>
+</html>

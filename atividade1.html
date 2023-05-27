@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exibir números pares 1</title>
+</head>
+<body>
+	<form>
+		<label for="valor">Informe um valor:</label>
+		<input type="number" id="valor" name="valor" required>
+		<button type="submit">Exibir números pares</button>
+	</form>
+
+	<div id="res"></div>
+
+	<script>
+		const form = document.querySelector('form');
+		const resultado = document.querySelector('#resultado');
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const valor = parseInt(form.valor.value);
+			const { soma, pares } = calcularPares(valor);
+			res.innerHTML = `
+				<p>Soma dos números pares: ${soma}</p>
+				<p>Lista de números pares: ${pares.join(', ')}</p>
+			`;
+		});
+
+		function calcularPares(valor) {
+			const pares = [];
+			let soma = 0;
+			for (let i = 1; i <= valor; i++) {
+				if (i % 2 === 0) {
+					soma += i;
+					pares.push(i);
+				}
+			}
+			return { soma, pares };
+		}
+	</script>
+</body>
+</html>

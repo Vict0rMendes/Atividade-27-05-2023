@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora de Vendas</title>
+</head>
+<body>
+	<h1>Calculadora de Vendas</h1>
+	<script>
+		function calcular() {
+    // Obter os dados dos produtos
+    var produto1 = document.getElementById("produto1").value;
+    var valor1 = document.getElementById("valor1").value;
+    var quantidade1 = document.getElementById("quantidade1").value;
+  
+    var produto2 = document.getElementById("produto2").value;
+    var valor2 = document.getElementById("valor2").value;
+    var quantidade2 = document.getElementById("quantidade2").value;
+  
+    var produto3 = document.getElementById("produto3").value;
+    var valor3 = document.getElementById("valor3").value;
+    var quantidade3 = document.getElementById("quantidade3").value;
+  
+    // Calcular o valor total da venda
+    var total = (valor1 * quantidade1) + (valor2 * quantidade2) + (valor3 * quantidade3);
+  
+    // Exibir o resultado na página
+    var resultado = "Valor total da venda: R$ " + total.toFixed(2);
+    document.getElementById("resultado").innerHTML = resultado;
+  }
+	</script>
+	<form>
+		<label for="produto1">Produto 1:</label>
+		<input type="text" id="produto1" name="produto1">
+		<label for="valor1">Valor:</label>
+		<input type="number" id="valor1" name="valor1">
+		<label for="quantidade1">Quantidade:</label>
+		<input type="number" id="quantidade1" name="quantidade1"><br><br>
+
+		<label for="produto2">Produto 2:</label>
+		<input type="text" id="produto2" name="produto2">
+		<label for="valor2">Valor:</label>
+		<input type="number" id="valor2" name="valor2">
+		<label for="quantidade2">Quantidade:</label>
+		<input type="number" id="quantidade2" name="quantidade2"><br><br>
+
+		<label for="produto3">Produto 3:</label>
+		<input type="text" id="produto3" name="produto3">
+		<label for="valor3">Valor:</label>
+		<input type="number" id="valor3" name="valor3">
+		<label for="quantidade3">Quantidade:</label>
+		<input type="number" id="quantidade3" name="quantidade3"><br><br>
+
+		<button type="button" onclick="calcular()">Calcular</button>
+	</form>
+
+	<p id="resultado"></p>
+
+</body>
+</html>

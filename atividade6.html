@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcularPesoIdeal() {
+        const altura = document.getElementById("altura").value;
+        const sexo = document.getElementById("sexo").value;
+
+        let pesoIdeal;
+
+        if (sexo === "homem") {
+            pesoIdeal = (72.7 * altura) - 58;
+        } else if (sexo === "mulher") {
+            pesoIdeal = (62.1 * altura) - 44.7;
+        }
+
+        alert(`Seu peso ideal é de ${pesoIdeal.toFixed(2)} kg`);
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <label for="altura">Altura (em metros):</label>
+        <input type="number" step="0.01" id="altura" name="altura"><br>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo">
+            <option value="homem">Homem</option>
+            <option value="mulher">Mulher</option>
+        </select><br>
+
+        <button type="button" onclick="calcularPesoIdeal()">Calcular peso ideal</button>
+    </form>
+    <button type="button" onclick="calcularPesoIdeal()">Calcular peso ideal</button>
+
+</body>
+</html>
